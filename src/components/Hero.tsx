@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/images/hero-bg.jpg";
 
 const Hero = () => {
   return (
@@ -36,7 +36,7 @@ const Hero = () => {
         </h2>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          4+ years of experience building commercial and scalable systems with JavaScript stack. 
+          5 years of experience building commercial and scalable systems with JavaScript stack. 
           Specialized in creating beautiful UIs with robust functionality for web and mobile platforms.
         </p>
 
