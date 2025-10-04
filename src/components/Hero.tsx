@@ -1,23 +1,22 @@
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Code2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/images/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden py-16 md:py-24">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroBg} 
-          alt="Hero background" 
-          className="w-full h-full object-cover opacity-20"
-        />
+        {/* Gradient base */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-primary/10" />
+        {/* Developer logo watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <Code2 className="w-[220px] sm:w-[320px] md:w-[420px] lg:w-[520px] h-auto text-primary/15" />
+        </div>
       </div>
 
       {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="hidden sm:block absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="hidden sm:block absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -27,21 +26,21 @@ const Hero = () => {
           </span>
         </div>
         
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
           Samim Zafar
         </h1>
         
-        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-primary">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-primary">
           MERN Stack & React Native Engineer
         </h2>
         
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
           5 years of experience building commercial and scalable systems with JavaScript stack. 
           Specialized in creating beautiful UIs with robust functionality for web and mobile platforms.
         </p>
 
         {/* Social Links */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
+        <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-12">
           <Button 
             variant="default" 
             size="lg"
@@ -82,7 +81,7 @@ const Hero = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="animate-bounce">
+        <div className="hidden sm:block animate-bounce">
           <div className="w-6 h-10 border-2 border-primary/50 rounded-full mx-auto flex justify-center">
             <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
           </div>

@@ -21,32 +21,32 @@ const skills = {
 
 const Skills = () => {
   return (
-    <section className="py-20 px-6">
+    <section className="py-16 md:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg">
             Technologies I work with to build exceptional products
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {Object.entries(skills).map(([category, items]) => (
             <div 
               key={category}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:shadow-card"
+              className="bg-card border border-border rounded-xl p-5 sm:p-6 hover:border-primary/50 transition-all hover:shadow-card"
             >
-              <h3 className="text-xl font-semibold mb-4 text-primary">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-primary">
                 {category}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {items.map((skill) => (
                   <Badge 
                     key={skill}
                     variant="secondary"
-                    className="px-3 py-1.5 text-sm bg-secondary/50 hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all cursor-default"
+                    className="px-2.5 sm:px-3 py-1.5 text-xs sm:text-sm bg-secondary/50 hover:bg-primary/20 hover:text-primary hover:border-primary/50 transition-all cursor-default"
                   >
                     {skill}
                   </Badge>

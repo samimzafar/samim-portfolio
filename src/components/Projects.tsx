@@ -98,35 +98,34 @@ const projects = [
       "API integration for seamless communication",
       "Responsive user interface"
     ],
-    github: "https://github.com/samimzafar"
   }
 ];
 
 const Projects = () => {
   return (
-    <section className="py-20 px-6">
+    <section className="py-16 md:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">
             Featured Projects
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base sm:text-lg">
             A selection of projects I've worked on
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <div 
               key={index}
               className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all hover:shadow-card group"
             >
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+              <div className="p-5 sm:p-6 space-y-3.5 sm:space-y-4">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <div className="flex gap-2">
+                  <div className="flex gap-1.5 sm:gap-2">
                     {project.github && (
                       <Button 
                         variant="ghost" 
@@ -135,7 +134,7 @@ const Projects = () => {
                         asChild
                       >
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-5 w-5" />
+                          <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                         </a>
                       </Button>
                     )}
@@ -147,22 +146,22 @@ const Projects = () => {
                         asChild
                       >
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-5 w-5" />
+                          <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
                         </a>
                       </Button>
                     )}
                   </div>
                 </div>
 
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm sm:text-base">
                   {project.description}
                 </p>
 
                 <div className="space-y-2">
-                  <h4 className="text-sm font-medium text-foreground">Key Highlights:</h4>
-                  <ul className="space-y-1">
+                  <h4 className="text-xs sm:text-sm font-medium text-foreground">Key Highlights:</h4>
+                  <ul className="space-y-1.5">
                     {project.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
                         <span className="text-accent mt-0.5">▹</span>
                         <span>{highlight}</span>
                       </li>
@@ -170,12 +169,12 @@ const Projects = () => {
                   </ul>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                   {project.tech.map((tech) => (
-                    <Badge 
+                    <Badge
                       key={tech}
                       variant="outline"
-                      className="text-xs bg-secondary/30 border-primary/20 hover:border-primary/50 hover:bg-primary/10 transition-all"
+                      className="text-[10px] sm:text-xs bg-secondary/30 border-primary/20 hover:border-primary/50 hover:bg-primary/10 transition-all"
                     >
                       {tech}
                     </Badge>

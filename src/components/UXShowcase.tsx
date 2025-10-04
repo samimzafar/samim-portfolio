@@ -19,11 +19,11 @@ const UXShowcase = () => {
   }, [api]);
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Project Shots · UX</h2>
-          <p className="text-muted-foreground">A quick look at app screens, flows and visual style</p>
+        <div className="text-center mb-8 md:mb-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">Project Shots · UX</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">A quick look at app screens, flows and visual style</p>
         </div>
 
         <div
@@ -38,11 +38,11 @@ const UXShowcase = () => {
           >
             <CarouselContent>
               {ProjectImagesList.map((src, i) => (
-                // 1 per row on small screens, 2 per row from md and up
-                <CarouselItem key={i} className="basis-full sm:basis-3/4 md:basis-1/2 lg:basis-1/2">
+                // 1 per row on small screens, 2 on md, 3 on xl
+                <CarouselItem key={i} className="basis-full sm:basis-3/4 md:basis-1/2 xl:basis-1/3">
                   <div className="p-4">
                     {/* Clean device-like card, no distracting notch */}
-                    <div className="mx-auto max-w-[360px] md:max-w-[420px] rounded-3xl border border-border bg-card/60 shadow-xl backdrop-blur-sm">
+                    <div className="mx-auto max-w-[320px] sm:max-w-[360px] md:max-w-[420px] rounded-3xl border border-border bg-card/60 shadow-xl backdrop-blur-sm">
                       <div className="p-3">
                         <AspectRatio ratio={9/19.5} className="rounded-2xl overflow-hidden bg-black/95">
                           <img
@@ -65,14 +65,14 @@ const UXShowcase = () => {
                         </AspectRatio>
                       </div>
                       {/* Simple caption to guide the viewer */}
-                      <div className="px-4 pb-4 text-center text-xs text-muted-foreground">Screen {i + 1}</div>
+                      <div className="px-4 pb-4 text-center text-[10px] sm:text-xs text-muted-foreground">Screen {i + 1}</div>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="-left-4 md:-left-10" />
-            <CarouselNext className="-right-4 md:-right-10" />
+            <CarouselPrevious className="hidden sm:flex -left-4 md:-left-10" />
+            <CarouselNext className="hidden sm:flex -right-4 md:-right-10" />
           </Carousel>
         </div>
       </div>
